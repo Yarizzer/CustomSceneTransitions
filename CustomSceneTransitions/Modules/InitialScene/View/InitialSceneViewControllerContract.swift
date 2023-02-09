@@ -13,5 +13,6 @@ protocol InitialSceneViewControllerType {
 struct InitialSceneViewControllerViewModel {
 	enum ViewModelDataType {
 		case initialSetup(with: InitialSceneViewModelType)
+        case setupProvider(with: InitialSceneViewModelType)
 	}
 }

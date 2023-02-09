@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11B4F0062995409F004E1741 /* InitialSceneInteractorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4F0052995409F004E1741 /* InitialSceneInteractorService.swift */; };
 		11CD4878298BBFFE000F66CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CD4877298BBFFE000F66CE /* AppDelegate.swift */; };
 		11CD4881298BC002000F66CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11CD4880298BC002000F66CE /* Assets.xcassets */; };
 		11CD4884298BC002000F66CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CD4882298BC002000F66CE /* LaunchScreen.storyboard */; };
@@ -22,7 +23,6 @@
 		11CD48B2298BC3C2000F66CE /* InitialScenePresenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CD48A6298BC3C2000F66CE /* InitialScenePresenterService.swift */; };
 		11CD48B3298BC3C2000F66CE /* InitialSceneInteractorContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CD48A7298BC3C2000F66CE /* InitialSceneInteractorContract.swift */; };
 		11CD48B4298BC3C2000F66CE /* InitialSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11CD48A8298BC3C2000F66CE /* InitialSceneViewController.xib */; };
-		11CD48B5298BC3C2000F66CE /* InitialSceneInteractorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CD48A9298BC3C2000F66CE /* InitialSceneInteractorService.swift */; };
 		11CD48B6298BC3C2000F66CE /* InitialScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CD48AA298BC3C2000F66CE /* InitialScenePresenter.swift */; };
 		11CD48B7298BC3C2000F66CE /* InitialSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CD48AB298BC3C2000F66CE /* InitialSceneViewController.swift */; };
 		11CD48B8298BC3C2000F66CE /* InitialSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CD48AC298BC3C2000F66CE /* InitialSceneViewModel.swift */; };
@@ -39,9 +39,25 @@
 		11CD48D8298BC4D8000F66CE /* SecondScenePresenterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CD48CC298BC4D8000F66CE /* SecondScenePresenterContract.swift */; };
 		11CD48E0298BC5B6000F66CE /* SecondScenePresenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CD48DF298BC5B6000F66CE /* SecondScenePresenterService.swift */; };
 		11D04EA629951735005A9B5C /* Publisher + Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D04EA529951735005A9B5C /* Publisher + Subscription.swift */; };
+		11D04EA929951B80005A9B5C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D04EA829951B80005A9B5C /* Logger.swift */; };
+		11D04EAB29951BB5005A9B5C /* BlurTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D04EAA29951BB5005A9B5C /* BlurTransitionAnimator.swift */; };
+		11D04EAD29951BD4005A9B5C /* CircleShapeTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D04EAC29951BD4005A9B5C /* CircleShapeTransitionAnimator.swift */; };
+		11D04EB029951C10005A9B5C /* StyleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D04EAF29951C10005A9B5C /* StyleLayer.swift */; };
+		11D04EB229951C34005A9B5C /* StyleLayerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D04EB129951C34005A9B5C /* StyleLayerType.swift */; };
+		11D04EB429951D09005A9B5C /* CardShapeTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D04EB329951D09005A9B5C /* CardShapeTransitionAnimator.swift */; };
+		11D04EB629951D88005A9B5C /* InitialSceneViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D04EB529951D88005A9B5C /* InitialSceneViewModelContract.swift */; };
+		11D04EBA29951E69005A9B5C /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D04EB929951E69005A9B5C /* BackButton.swift */; };
+		11D04EBD29951F9A005A9B5C /* TableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D04EBC29951F9A005A9B5C /* TableViewProvider.swift */; };
+		11D04EC029951FCD005A9B5C /* TableViewProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D04EBF29951FCD005A9B5C /* TableViewProviderType.swift */; };
+		11D04EC229951FEF005A9B5C /* TableViewProviderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D04EC129951FEE005A9B5C /* TableViewProviderViewModel.swift */; };
+		11D04EC42995201B005A9B5C /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D04EC32995201B005A9B5C /* NibLoadableView.swift */; };
+		11D04ECB29952307005A9B5C /* InitialSceneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D04EC929952307005A9B5C /* InitialSceneTableViewCell.xib */; };
+		11D04ECC29952307005A9B5C /* InitialSceneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D04ECA29952307005A9B5C /* InitialSceneTableViewCell.swift */; };
+		11D04ECE2995231B005A9B5C /* InitialSceneTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D04ECD2995231B005A9B5C /* InitialSceneTableViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11B4F0052995409F004E1741 /* InitialSceneInteractorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSceneInteractorService.swift; sourceTree = "<group>"; };
 		11CD4874298BBFFE000F66CE /* CustomSceneTransitions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomSceneTransitions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CD4877298BBFFE000F66CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11CD4880298BC002000F66CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,7 +75,6 @@
 		11CD48A6298BC3C2000F66CE /* InitialScenePresenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScenePresenterService.swift; sourceTree = "<group>"; };
 		11CD48A7298BC3C2000F66CE /* InitialSceneInteractorContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSceneInteractorContract.swift; sourceTree = "<group>"; };
 		11CD48A8298BC3C2000F66CE /* InitialSceneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialSceneViewController.xib; sourceTree = "<group>"; };
-		11CD48A9298BC3C2000F66CE /* InitialSceneInteractorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSceneInteractorService.swift; sourceTree = "<group>"; };
 		11CD48AA298BC3C2000F66CE /* InitialScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScenePresenter.swift; sourceTree = "<group>"; };
 		11CD48AB298BC3C2000F66CE /* InitialSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSceneViewController.swift; sourceTree = "<group>"; };
 		11CD48AC298BC3C2000F66CE /* InitialSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSceneViewModel.swift; sourceTree = "<group>"; };
@@ -76,6 +91,21 @@
 		11CD48CC298BC4D8000F66CE /* SecondScenePresenterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScenePresenterContract.swift; sourceTree = "<group>"; };
 		11CD48DF298BC5B6000F66CE /* SecondScenePresenterService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondScenePresenterService.swift; sourceTree = "<group>"; };
 		11D04EA529951735005A9B5C /* Publisher + Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher + Subscription.swift"; sourceTree = "<group>"; };
+		11D04EA829951B80005A9B5C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		11D04EAA29951BB5005A9B5C /* BlurTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurTransitionAnimator.swift; sourceTree = "<group>"; };
+		11D04EAC29951BD4005A9B5C /* CircleShapeTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleShapeTransitionAnimator.swift; sourceTree = "<group>"; };
+		11D04EAF29951C10005A9B5C /* StyleLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleLayer.swift; sourceTree = "<group>"; };
+		11D04EB129951C34005A9B5C /* StyleLayerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleLayerType.swift; sourceTree = "<group>"; };
+		11D04EB329951D09005A9B5C /* CardShapeTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardShapeTransitionAnimator.swift; sourceTree = "<group>"; };
+		11D04EB529951D88005A9B5C /* InitialSceneViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSceneViewModelContract.swift; sourceTree = "<group>"; };
+		11D04EB929951E69005A9B5C /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		11D04EBC29951F9A005A9B5C /* TableViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProvider.swift; sourceTree = "<group>"; };
+		11D04EBF29951FCD005A9B5C /* TableViewProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProviderType.swift; sourceTree = "<group>"; };
+		11D04EC129951FEE005A9B5C /* TableViewProviderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProviderViewModel.swift; sourceTree = "<group>"; };
+		11D04EC32995201B005A9B5C /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		11D04EC929952307005A9B5C /* InitialSceneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialSceneTableViewCell.xib; sourceTree = "<group>"; };
+		11D04ECA29952307005A9B5C /* InitialSceneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSceneTableViewCell.swift; sourceTree = "<group>"; };
+		11D04ECD2995231B005A9B5C /* InitialSceneTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSceneTableViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +119,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11B4F00229954065004E1741 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				11B4F0052995409F004E1741 /* InitialSceneInteractorService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		11CD486B298BBFFE000F66CE = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +195,9 @@
 		11CD4897298BC209000F66CE /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				11D04EAE29951BF9005A9B5C /* StyleLayer */,
 				11CD4898298BC210000F66CE /* DeviceLayer */,
+				11D04EA729951B74005A9B5C /* Logger */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -190,9 +230,12 @@
 		11CD489D298BC30D000F66CE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				11D04EB829951E54005A9B5C /* ViewElements */,
 				11D04EA429951719005A9B5C /* Publisher */,
+				11D04EBB29951F84005A9B5C /* Providers */,
 				11CD48A2298BC3A6000F66CE /* TransitionAnimators */,
 				11CD48A0298BC349000F66CE /* BaseViewController.swift */,
+				11D04EC32995201B005A9B5C /* NibLoadableView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -221,6 +264,9 @@
 		11CD48A2298BC3A6000F66CE /* TransitionAnimators */ = {
 			isa = PBXGroup;
 			children = (
+				11D04EAA29951BB5005A9B5C /* BlurTransitionAnimator.swift */,
+				11D04EAC29951BD4005A9B5C /* CircleShapeTransitionAnimator.swift */,
+				11D04EB329951D09005A9B5C /* CardShapeTransitionAnimator.swift */,
 			);
 			path = TransitionAnimators;
 			sourceTree = "<group>";
@@ -237,6 +283,7 @@
 		11CD48BC298BC3D9000F66CE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				11D04EC5299522CD005A9B5C /* Elements */,
 				11CD48AB298BC3C2000F66CE /* InitialSceneViewController.swift */,
 				11CD48A8298BC3C2000F66CE /* InitialSceneViewController.xib */,
 				11CD48A5298BC3C2000F66CE /* InitialSceneViewControllerContract.swift */,
@@ -247,9 +294,9 @@
 		11CD48BD298BC44B000F66CE /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				11CD48AE298BC3C2000F66CE /* InitialScenePresenterContract.swift */,
-				11CD48A6298BC3C2000F66CE /* InitialScenePresenterService.swift */,
+				11D04EB729951E19005A9B5C /* Service */,
 				11CD48AA298BC3C2000F66CE /* InitialScenePresenter.swift */,
+				11CD48AE298BC3C2000F66CE /* InitialScenePresenterContract.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -257,9 +304,9 @@
 		11CD48BE298BC457000F66CE /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				11CD48A7298BC3C2000F66CE /* InitialSceneInteractorContract.swift */,
-				11CD48A9298BC3C2000F66CE /* InitialSceneInteractorService.swift */,
+				11B4F00229954065004E1741 /* Service */,
 				11CD48AD298BC3C2000F66CE /* InitialSceneInteractor.swift */,
+				11CD48A7298BC3C2000F66CE /* InitialSceneInteractorContract.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -268,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				11CD48AC298BC3C2000F66CE /* InitialSceneViewModel.swift */,
+				11D04EB529951D88005A9B5C /* InitialSceneViewModelContract.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -345,6 +393,91 @@
 			path = Publisher;
 			sourceTree = "<group>";
 		};
+		11D04EA729951B74005A9B5C /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				11D04EA829951B80005A9B5C /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		11D04EAE29951BF9005A9B5C /* StyleLayer */ = {
+			isa = PBXGroup;
+			children = (
+				11D04EAF29951C10005A9B5C /* StyleLayer.swift */,
+				11D04EB129951C34005A9B5C /* StyleLayerType.swift */,
+			);
+			path = StyleLayer;
+			sourceTree = "<group>";
+		};
+		11D04EB729951E19005A9B5C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				11CD48A6298BC3C2000F66CE /* InitialScenePresenterService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		11D04EB829951E54005A9B5C /* ViewElements */ = {
+			isa = PBXGroup;
+			children = (
+				11D04EB929951E69005A9B5C /* BackButton.swift */,
+			);
+			path = ViewElements;
+			sourceTree = "<group>";
+		};
+		11D04EBB29951F84005A9B5C /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				11D04EBE29951FB5005A9B5C /* Protocols */,
+				11D04EBC29951F9A005A9B5C /* TableViewProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		11D04EBE29951FB5005A9B5C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				11D04EBF29951FCD005A9B5C /* TableViewProviderType.swift */,
+				11D04EC129951FEE005A9B5C /* TableViewProviderViewModel.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		11D04EC5299522CD005A9B5C /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				11D04EC6299522D8005A9B5C /* Cell */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		11D04EC6299522D8005A9B5C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				11D04EC7299522E2005A9B5C /* ViewModel */,
+				11D04EC8299522EC005A9B5C /* View */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		11D04EC7299522E2005A9B5C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				11D04ECD2995231B005A9B5C /* InitialSceneTableViewCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		11D04EC8299522EC005A9B5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11D04EC929952307005A9B5C /* InitialSceneTableViewCell.xib */,
+				11D04ECA29952307005A9B5C /* InitialSceneTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -408,6 +541,7 @@
 				11CD488C298BC032000F66CE /* .gitignore in Resources */,
 				11CD48B4298BC3C2000F66CE /* InitialSceneViewController.xib in Resources */,
 				11CD4881298BC002000F66CE /* Assets.xcassets in Resources */,
+				11D04ECB29952307005A9B5C /* InitialSceneTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,29 +556,43 @@
 				11D04EA629951735005A9B5C /* Publisher + Subscription.swift in Sources */,
 				11CD4894298BC187000F66CE /* AppCore.swift in Sources */,
 				11CD48AF298BC3C2000F66CE /* InitialSceneRouter.swift in Sources */,
+				11D04EBD29951F9A005A9B5C /* TableViewProvider.swift in Sources */,
+				11D04ECC29952307005A9B5C /* InitialSceneTableViewCell.swift in Sources */,
 				11CD48D5298BC4D8000F66CE /* SecondSceneViewController.swift in Sources */,
 				11CD4891298BC108000F66CE /* AppRouter.swift in Sources */,
 				11CD48B2298BC3C2000F66CE /* InitialScenePresenterService.swift in Sources */,
 				11CD48CF298BC4D8000F66CE /* SecondSceneViewControllerContract.swift in Sources */,
+				11D04EC42995201B005A9B5C /* NibLoadableView.swift in Sources */,
 				11CD48B0298BC3C2000F66CE /* InitialSceneRouterContract.swift in Sources */,
+				11D04EC229951FEF005A9B5C /* TableViewProviderViewModel.swift in Sources */,
 				11CD4878298BBFFE000F66CE /* AppDelegate.swift in Sources */,
 				11CD48B8298BC3C2000F66CE /* InitialSceneViewModel.swift in Sources */,
+				11D04EA929951B80005A9B5C /* Logger.swift in Sources */,
 				11CD489A298BC222000F66CE /* DeviceLayer.swift in Sources */,
+				11B4F0062995409F004E1741 /* InitialSceneInteractorService.swift in Sources */,
 				11CD48E0298BC5B6000F66CE /* SecondScenePresenterService.swift in Sources */,
 				11CD48B7298BC3C2000F66CE /* InitialSceneViewController.swift in Sources */,
 				11CD48B9298BC3C2000F66CE /* InitialSceneInteractor.swift in Sources */,
 				11CD48CD298BC4D8000F66CE /* SecondSceneRouter.swift in Sources */,
 				11CD48B6298BC3C2000F66CE /* InitialScenePresenter.swift in Sources */,
 				11CD48D8298BC4D8000F66CE /* SecondScenePresenterContract.swift in Sources */,
+				11D04EBA29951E69005A9B5C /* BackButton.swift in Sources */,
+				11D04EAD29951BD4005A9B5C /* CircleShapeTransitionAnimator.swift in Sources */,
+				11D04EC029951FCD005A9B5C /* TableViewProviderType.swift in Sources */,
 				11CD48D1298BC4D8000F66CE /* SecondSceneInteractorContract.swift in Sources */,
 				11CD48B1298BC3C2000F66CE /* InitialSceneViewControllerContract.swift in Sources */,
+				11D04ECE2995231B005A9B5C /* InitialSceneTableViewCellViewModel.swift in Sources */,
 				11CD48B3298BC3C2000F66CE /* InitialSceneInteractorContract.swift in Sources */,
 				11CD48D6298BC4D8000F66CE /* SecondSceneViewModel.swift in Sources */,
 				11CD48D7298BC4D8000F66CE /* SecondSceneInteractor.swift in Sources */,
-				11CD48B5298BC3C2000F66CE /* InitialSceneInteractorService.swift in Sources */,
+				11D04EB429951D09005A9B5C /* CardShapeTransitionAnimator.swift in Sources */,
+				11D04EB029951C10005A9B5C /* StyleLayer.swift in Sources */,
+				11D04EB629951D88005A9B5C /* InitialSceneViewModelContract.swift in Sources */,
 				11CD48A1298BC349000F66CE /* BaseViewController.swift in Sources */,
 				11CD48BA298BC3C2000F66CE /* InitialScenePresenterContract.swift in Sources */,
 				11CD48D4298BC4D8000F66CE /* SecondScenePresenter.swift in Sources */,
+				11D04EAB29951BB5005A9B5C /* BlurTransitionAnimator.swift in Sources */,
+				11D04EB229951C34005A9B5C /* StyleLayerType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

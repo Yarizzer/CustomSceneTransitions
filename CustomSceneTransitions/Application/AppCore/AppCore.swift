@@ -10,12 +10,18 @@ class AppCore {
     
     private init() {
         self.deviceL = DeviceLayer()
+        self.styleL = StyleLayer()
     }
     
     //Layers
     private var deviceL: DeviceLayerType
+    private var styleL: StyleLayerType
 }
 
 extension AppCore: AppDeviceable {
     var deviceLayer: DeviceLayerType { return deviceL }
+}
+
+extension AppCore: AppStyleable {
+    var styleLayer: StyleLayerType { return styleL }
 }

@@ -10,18 +10,19 @@ class InitialSceneInteractor {
 	init(withRouter router: InitialSceneRoutable, presenter: InitialScenePresentable, service: InitialSceneInteractorServiceType) {
 		self.router = router
 		self.presenter = presenter
-		self.service = service
+        self.service = service
 	}
 
 	private var router: InitialSceneRoutable
 	private var presenter: InitialScenePresentable
-	private var service: InitialSceneInteractorServiceType
+    private var service: InitialSceneInteractorServiceType
 }
 
 extension InitialSceneInteractor: InitialSceneInteractable {
 	func makeRequest(requestType: InitialSceneInteractorRequest.RequestType) {
 		switch requestType {
 		case .initialSetup: presenter.response(responseType: .initialSetup)
+        case .routeToSecondScene(let index): router.routeTo(scene: .secondScene(withData: service.getData(for: index)))
 		}
 	}
 }

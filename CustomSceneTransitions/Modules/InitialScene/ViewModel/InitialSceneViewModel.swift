@@ -7,13 +7,61 @@
 //
 
 protocol InitialSceneViewModelType {
-	
+    var sceneTitle: String { get }
+    
+    func getCellViewModel(for index: Int) -> InitialSceneTableViewCellViewModelType
+    func getType(with index: Int) -> SceneTransitionType
+    func getData(for index: Int) -> SceneTransitionData
 }
 
 class InitialSceneViewModel {
-	
+    init() {
+        self.types = [SceneTransitionData]()
+        self.types.append(SceneTransitionData(with: Constants.blurData))
+        self.types.append(SceneTransitionData(with: Constants.circleData))
+        self.types.append(SceneTransitionData(with: Constants.cardData))
+    }
+    
+    private var types: [SceneTransitionData]
 }
 
 extension InitialSceneViewModel: InitialSceneViewModelType {
-	
+    var sceneTitle: String { return Constants.sceneTitle }
+    
+    func getCellViewModel(for index: Int) -> InitialSceneTableViewCellViewModelType {
+        return InitialSceneTableViewCellViewModel(with: types[index])
+    }
+    
+    func getType(with index: Int) -> SceneTransitionType {
+        return types[index].type
+    }
+    
+    func getData(for index: Int) -> SceneTransitionData {
+        return types[index]
+    }
+}
+
+extension InitialSceneViewModel: TableViewProviderViewModel {
+    var numberOfTableSections: Int {
+        return Constants.sectionsCount
+    }
+    
+    func numberOfTableRowsInSection(_ section: Int) -> Int {
+        return types.count
+    }
+    
+    func heightForRow(atIndex index: Int) -> Float {
+        return Constants.defaultCellHeight
+    }
+}
+
+extension InitialSceneViewModel {
+    private struct Constants {
+        static let sceneTitle = "Initial scene"
+        static let blurData = (title: "Blur", description: "Blur type", type: SceneTransitionType.blur)
+        static let circleData = (title: "Circle", description: "Circle type", type: SceneTransitionType.circle)
+        static let cardData = (title: "Card", description: "Card type", type: SceneTransitionType.card)
+        static let sectionsCount = 1
+        static let defaultCellHeight: Float = 80.0
+    }
 }

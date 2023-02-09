@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SecondSceneRoutable {
-	static func assembly() -> UIViewController
+    static func assembly(with data: SceneTransitionData) -> UIViewController
 	func dismiss()
 }
 
@@ -18,14 +18,13 @@ class SecondSceneRouter {
 }
 
 extension SecondSceneRouter: SecondSceneRoutable {
-	static func assembly() -> UIViewController {
+	static func assembly(with data: SceneTransitionData) -> UIViewController {
 		let router = SecondSceneRouter()
 		let vc                  = SecondSceneViewController(nibName: String(describing: SecondSceneViewController.self), bundle: Bundle.main)
-		let viewModel           = SecondSceneViewModel()
+		let viewModel           = SecondSceneViewModel(with: data)
 		let presenterService    = SecondScenePresenterService(withModel: viewModel)
 		let presenter           = SecondScenePresenter(for: vc, service: presenterService)
-		let interactorService   = SecondSceneInteractorService(withModel: viewModel)
-		let interactor          = SecondSceneInteractor(withRouter: router, presenter: presenter, service: interactorService)
+		let interactor          = SecondSceneInteractor(withRouter: router, presenter: presenter)
 		
 		router.view = vc
 		

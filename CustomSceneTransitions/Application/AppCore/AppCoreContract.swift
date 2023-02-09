@@ -8,3 +8,7 @@
 protocol AppDeviceable {
     var deviceLayer: DeviceLayerType { get }
 }
+
+protocol AppStyleable {
+    var styleLayer: StyleLayerType { get }
+}

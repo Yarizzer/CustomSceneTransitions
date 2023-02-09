@@ -16,7 +16,7 @@ protocol InitialSceneRoutable {
 class InitialSceneRouter {
 	private func prepareDestinationScene(with type: InitialSceneRoutableContractData.InitialSceneRoutableSceneType) -> UIViewController {
 		switch type {
-        case .secondScene: return SecondSceneRouter.assembly()
+        case .secondScene(let data): return SecondSceneRouter.assembly(with: data)
 		}
 	}
 	
@@ -30,7 +30,7 @@ extension InitialSceneRouter: InitialSceneRoutable {
 		let viewModel           = InitialSceneViewModel()
 		let presenterService    = InitialScenePresenterService(withModel: viewModel)
 		let presenter           = InitialScenePresenter(for: vc, service: presenterService)
-		let interactorService   = InitialSceneInteractorService(withModel: viewModel)
+        let interactorService   = InitialSceneInteractorService(withModel: viewModel)
 		let interactor          = InitialSceneInteractor(withRouter: router, presenter: presenter, service: interactorService)
 		
 		router.view = vc
@@ -47,7 +47,7 @@ extension InitialSceneRouter: InitialSceneRoutable {
 	func routeTo(scene type: InitialSceneRoutableContractData.InitialSceneRoutableSceneType) {
 		let vc = prepareDestinationScene(with: type)
 		vc.modalPresentationStyle = .currentContext
-		//vc.transitioningDelegate = view       //Setup custom transition here
+		vc.transitioningDelegate = view
 		self.view?.present(vc, animated: true)
 	}
 }

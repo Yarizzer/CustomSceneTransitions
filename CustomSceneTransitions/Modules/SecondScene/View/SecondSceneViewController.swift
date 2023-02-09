@@ -15,6 +15,12 @@ class SecondSceneViewController: BaseViewController<SecondSceneInteractable> {
 		
 		setup()
 	}
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        backButton.appear()
+    }
 	
 	private func setup() {
         topPaddingConstraint.constant = (AppCore.shared.deviceLayer.hasTopNotch ? Constants.topConstraintValueWithNotch : Constants.topConstraintValueWithoutNotch)
@@ -22,12 +28,15 @@ class SecondSceneViewController: BaseViewController<SecondSceneInteractable> {
 		interactor?.makeRequest(requestType: .initialSetup)
 	}
     
-    @IBAction private func backButtonAction(_ sender: UIButton) {
+    @IBAction private func backButtonAction(_ sender: BackButton) {
         interactor?.makeRequest(requestType: .routeBack)
     }
     
     @IBOutlet private weak var topPaddingConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var backButton: BackButton!
     @IBOutlet private weak var sceneTitle: UILabel!
+    @IBOutlet private weak var typeTitle: UILabel!
+    @IBOutlet private weak var typeDescription: UILabel!
 }
 
 extension SecondSceneViewController: SecondSceneViewControllerType {
@@ -35,6 +44,14 @@ extension SecondSceneViewController: SecondSceneViewControllerType {
 		switch viewModelDataType {
 		case .initialSetup(let model):
             self.sceneTitle.text = model.sceneTitle
+            self.typeTitle.text = model.typeTitle
+            self.typeDescription.text = model.typeDescription
+            
+            switch model.type {
+            case .blur: view.backgroundColor = AppCore.shared.styleLayer.colorBlue
+            case .circle: view.backgroundColor = AppCore.shared.styleLayer.colorRed
+            case .card: view.backgroundColor = AppCore.shared.styleLayer.colorGreen
+            }
 		}
 	}
 }
