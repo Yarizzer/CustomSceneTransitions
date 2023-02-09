@@ -56,7 +56,7 @@ extension InitialSceneViewController: InitialSceneViewControllerType {
 //MARK: - UIViewControllerTransitioningDelegate
 extension InitialSceneViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        guard let selectedType = selectedType else { return  BlurTransitionAnimator()}
+        guard let selectedType = selectedType else { return nil }
         
         switch selectedType {
         case .blur: return BlurTransitionAnimator()
@@ -66,7 +66,7 @@ extension InitialSceneViewController: UIViewControllerTransitioningDelegate {
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        guard let selectedType = selectedType else { return  BlurTransitionAnimator()}
+        guard let selectedType = selectedType else { return nil }
         
         switch selectedType {
         case .blur: return BlurTransitionAnimator()
