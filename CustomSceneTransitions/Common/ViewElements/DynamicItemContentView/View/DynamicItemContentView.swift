@@ -52,10 +52,10 @@ final class DynamicItemContentView: UIView {
         
         canvas.translatesAutoresizingMaskIntoConstraints = false
         
-        canvas.topAnchor.constraint(equalTo: topAnchor, constant: Constants.elementsPaddingValue).isActive = true
-        canvas.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.elementsPaddingValue).isActive = true
-        canvas.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.elementsPaddingValue).isActive = true
-        canvas.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.elementsPaddingValue).isActive = true
+        canvas.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        canvas.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        canvas.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        canvas.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
         switch type {
         case .regular:
@@ -105,6 +105,10 @@ final class DynamicItemContentView: UIView {
         }
         
         setupConstraints(for: model.type)
+    }
+    
+    func prepareForAppear(completion: @escaping (Bool) -> ()) {
+//        UIView.animate(withDuration: <#T##TimeInterval#>, delay: <#T##TimeInterval#>, animations: <#T##() -> Void#>)
     }
     
     private var type: DynamicItemContetntViewType?

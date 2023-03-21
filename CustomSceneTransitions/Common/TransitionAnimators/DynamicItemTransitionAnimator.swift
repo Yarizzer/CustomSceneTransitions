@@ -17,37 +17,56 @@ final class DynamicItemTransitionAnimator: NSObject {
     
     private func runTransition(using context: UIViewControllerContextTransitioning) {
         let containerView = context.containerView
-        guard let presentedVC = context.viewController(forKey: .to), let presentedView = context.view(forKey: .to) else {
+        guard let destinationVC = context.viewController(forKey: .to), let destinationView = context.view(forKey: .to) else {
             context.completeTransition(false)
             
             return
         }
         
-        let finalFrame = context.finalFrame(for: presentedVC)
+        destinationView.isHidden = true
+        destinationView.frame = context.finalFrame(for: destinationVC)
         
         let dynamicCellView = DynamicItemContentView(frame: cellRect)
         dynamicCellView.setup(with: data)
         
         containerView.addSubview(dynamicCellView)
+        containerView.addSubview(destinationView)
         
         dynamicCellView.layoutIfNeeded()
-        UIView.animate(withDuration: Constants.animationDuration, animations: {
-            dynamicCellView.layoutIfNeeded()
-            dynamicCellView.frame.size.width = AppCore.shared.deviceLayer.screenSize.width / 2
-            dynamicCellView.frame.size.height = AppCore.shared.deviceLayer.screenSize.height / 2
+        UIView.animate(withDuration: Constants.animationDuration / 3, animations: {
+            dynamicCellView.center.x = AppCore.shared.deviceLayer.screenSize.midX
+            dynamicCellView.center.y = AppCore.shared.deviceLayer.screenSize.height / 3
+            
+            dynamicCellView.frame.size.width = AppCore.shared.deviceLayer.screenSize.midX
+//
+//            dynamicCellView.frame.size.width = AppCore.shared.deviceLayer.screenSize.midX
+//            dynamicCellView.frame.size.height = AppCore.shared.deviceLayer.screenSize.midY
 //            presentedView.transform = CGAffineTransform(scaleX: 1, y: 1)
 //            presentedView.frame = finalFrame
             
             //dynamicCellView.transform = CGAffineTransform(scaleX: 1, y: 1)
             //dynamicCellView.frame = finalFrame
-            dynamicCellView.center = presentedView.center
             
 //            presentedView.alpha = 1
 //            dynamicCellView.alpha = 1
             dynamicCellView.layoutIfNeeded()
-        }) { finished in
-            dynamicCellView.removeFromSuperview()
-            context.completeTransition(finished)
+        }) { _ in
+            UIView.animate(withDuration: Constants.animationDuration / 3, delay: 0, animations: {
+                dynamicCellView.frame.size.height = AppCore.shared.deviceLayer.screenSize.midY
+                dynamicCellView.center.y = AppCore.shared.deviceLayer.screenSize.midY
+                
+                dynamicCellView.layoutIfNeeded()
+            }) { finished in
+//                dynamicCellView.prepareForAppear() {
+//
+//                }
+                
+                dynamicCellView.removeFromSuperview()
+                
+                destinationView.isHidden = false
+                
+                context.completeTransition(finished)
+            }
         }
     }
     

@@ -18,8 +18,6 @@ class CardShapeTransitionAnimator: NSObject {
         
         guard let currentView = context.view(forKey: .from), let destinationVC = context.viewController(forKey: .to), let destinationView = context.view(forKey: .to) else { return }
         
-        let finalFrame = context.finalFrame(for: destinationVC)
-        
         destinationView.frame = AppCore.shared.deviceLayer.screenSize
         destinationView.transform = Constants.scalingTransformMinValue
         destinationView.center.x = Constants.screenCenter.x * 3
@@ -41,7 +39,7 @@ class CardShapeTransitionAnimator: NSObject {
             }, completion: { _ in
                 UIView.animate(withDuration: Constants.animationScalingDuration, animations: {
                     destinationView.transform = Constants.scalingTransformdefaultValue
-                    destinationView.frame = finalFrame
+                    destinationView.frame = context.finalFrame(for: destinationVC)
                 }, completion: { [weak self] finished in
                     destinationView.layer.cornerRadius = 0
                     

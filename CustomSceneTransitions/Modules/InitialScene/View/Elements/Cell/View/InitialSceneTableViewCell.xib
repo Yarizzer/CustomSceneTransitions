@@ -16,14 +16,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJW-ed-sZB" customClass="DynamicItemContentView" customModule="CustomSceneTransitions" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="5" y="5" width="310" height="34"/>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="sJW-ed-sZB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="41A-h7-w66"/>
-                    <constraint firstAttribute="bottom" secondItem="sJW-ed-sZB" secondAttribute="bottom" id="Hep-pI-epN"/>
-                    <constraint firstItem="sJW-ed-sZB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="KOZ-3g-iG1"/>
-                    <constraint firstAttribute="trailing" secondItem="sJW-ed-sZB" secondAttribute="trailing" id="dEo-zP-v06"/>
+                    <constraint firstItem="sJW-ed-sZB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="41A-h7-w66"/>
+                    <constraint firstAttribute="bottom" secondItem="sJW-ed-sZB" secondAttribute="bottom" constant="5" id="Hep-pI-epN"/>
+                    <constraint firstItem="sJW-ed-sZB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="KOZ-3g-iG1"/>
+                    <constraint firstAttribute="trailing" secondItem="sJW-ed-sZB" secondAttribute="trailing" constant="5" id="dEo-zP-v06"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
