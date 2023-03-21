@@ -16,10 +16,10 @@ protocol InitialSceneViewModelType {
 
 class InitialSceneViewModel {
     init() {
-        self.types = [SceneTransitionData]()
-        self.types.append(SceneTransitionData(with: Constants.blurData))
-        self.types.append(SceneTransitionData(with: Constants.circleData))
-        self.types.append(SceneTransitionData(with: Constants.cardData))
+        self.types = [SceneTransitionData(with: Constants.blurData),
+                      SceneTransitionData(with: Constants.circleData),
+                      SceneTransitionData(with: Constants.cardData),
+                      SceneTransitionData(with: Constants.dynamicItemData)]
     }
     
     private var types: [SceneTransitionData]
@@ -61,6 +61,7 @@ extension InitialSceneViewModel {
         static let blurData = (title: "Blur", description: "Blur type", type: SceneTransitionType.blur)
         static let circleData = (title: "Circle", description: "Circle type", type: SceneTransitionType.circle)
         static let cardData = (title: "Card", description: "Card type", type: SceneTransitionType.card)
+        static let dynamicItemData = (title: "Dynamic item", description: "Dynamic item type", type: SceneTransitionType.dynamicItem)
         static let sectionsCount = 1
         static let defaultCellHeight: Float = 80.0
     }

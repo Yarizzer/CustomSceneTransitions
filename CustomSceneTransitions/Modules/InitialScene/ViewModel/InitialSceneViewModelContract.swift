@@ -9,6 +9,7 @@ enum SceneTransitionType {
     case blur
     case circle
     case card
+    case dynamicItem
 }
 
 struct SceneTransitionData {

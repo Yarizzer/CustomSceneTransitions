@@ -7,6 +7,9 @@
 
 protocol InitialSceneTableViewCellViewModelType {
     var title: String { get }
+    var description: String { get }
+    
+    var dynamicItemModel: DynamicItemContentViewData { get }
 }
 
 class InitialSceneTableViewCellViewModel {
@@ -19,6 +22,12 @@ class InitialSceneTableViewCellViewModel {
 
 extension InitialSceneTableViewCellViewModel: InitialSceneTableViewCellViewModelType {
     var title: String { return type.title }
+    var description: String { return type.description }
+    
+    var dynamicItemModel: DynamicItemContentViewData {
+        return DynamicItemContentViewData(with: (title: type.title, description: type.description),
+                                          for: .regular)
+    }
 }
 
 extension InitialSceneTableViewCellViewModel {

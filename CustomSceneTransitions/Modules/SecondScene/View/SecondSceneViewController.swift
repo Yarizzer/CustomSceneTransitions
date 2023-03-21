@@ -51,6 +51,7 @@ extension SecondSceneViewController: SecondSceneViewControllerType {
             case .blur: view.backgroundColor = AppCore.shared.styleLayer.colorBlue
             case .circle: view.backgroundColor = AppCore.shared.styleLayer.colorRed
             case .card: view.backgroundColor = AppCore.shared.styleLayer.colorGreen
+            case .dynamicItem: view.backgroundColor = AppCore.shared.styleLayer.colorSoftPurple
             }
 		}
 	}

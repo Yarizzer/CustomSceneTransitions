@@ -15,11 +15,19 @@ class InitialSceneViewController: BaseViewController<InitialSceneInteractable> {
 		
 		setup()
 	}
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        interactor?.makeRequest(requestType: .viewIsReady)
+    }
 	
 	private func setup() {
 		interactor?.makeRequest(requestType: .initialSetup)
 	}
     
+    private var cellData: SceneTransitionData?
+    private var selectedIndexPath: IndexPath?
     private var selectedType: SceneTransitionType?
     private var provider: TableViewProviderType?
     
@@ -46,7 +54,10 @@ extension InitialSceneViewController: InitialSceneViewControllerType {
                 return cell
             }
             provider?.onSelectCell = { [weak self] indexPath in
+                self?.selectedIndexPath = indexPath
                 self?.selectedType = model.getType(with: indexPath.row)
+                self?.cellData = model.getData(for: indexPath.row)
+                
                 self?.interactor?.makeRequest(requestType: .routeToSecondScene(withIndex: indexPath.row))
             }
 		}
@@ -62,6 +73,13 @@ extension InitialSceneViewController: UIViewControllerTransitioningDelegate {
         case .blur: return BlurTransitionAnimator()
         case .circle: return CircleShapeTransitionAnimator(isPresenting: true, transitionPoint: self.view.center)
         case .card: return CardShapeTransitionAnimator(isPresenting: true)
+        case .dynamicItem:
+            guard let indexPath = selectedIndexPath, let selectedCell = tableView.cellForRow(at: indexPath), let cellData = cellData else { return  nil }
+            
+            let cellRect = selectedCell.convert(selectedCell.bounds, to: view)
+            let data = DynamicItemContentViewData(with: (title: cellData.title, description: cellData.description), for: .regular)
+
+            return DynamicItemTransitionAnimator(isPresenting: true, cellRect: cellRect, data: data)
         }
     }
     
@@ -72,6 +90,8 @@ extension InitialSceneViewController: UIViewControllerTransitioningDelegate {
         case .blur: return BlurTransitionAnimator()
         case .circle: return CircleShapeTransitionAnimator(isPresenting: false, transitionPoint: self.view.center)
         case .card: return CardShapeTransitionAnimator(isPresenting: false)
+        #warning("remove when ready")
+        case .dynamicItem: return CardShapeTransitionAnimator(isPresenting: false)
         }
     }
 }

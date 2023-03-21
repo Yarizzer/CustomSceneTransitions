@@ -21,7 +21,10 @@ class InitialSceneInteractor {
 extension InitialSceneInteractor: InitialSceneInteractable {
 	func makeRequest(requestType: InitialSceneInteractorRequest.RequestType) {
 		switch requestType {
-		case .initialSetup: presenter.response(responseType: .initialSetup)
+		case .initialSetup:
+            presenter.response(responseType: .initialSetup)
+            presenter.response(responseType: .setupProvider)
+        case .viewIsReady: print("View is ready. call subscription if needed")
         case .routeToSecondScene(let index): router.routeTo(scene: .secondScene(withData: service.getData(for: index)))
 		}
 	}

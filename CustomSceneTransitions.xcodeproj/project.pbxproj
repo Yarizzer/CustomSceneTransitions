@@ -54,6 +54,9 @@
 		11D04ECB29952307005A9B5C /* InitialSceneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D04EC929952307005A9B5C /* InitialSceneTableViewCell.xib */; };
 		11D04ECC29952307005A9B5C /* InitialSceneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D04ECA29952307005A9B5C /* InitialSceneTableViewCell.swift */; };
 		11D04ECE2995231B005A9B5C /* InitialSceneTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D04ECD2995231B005A9B5C /* InitialSceneTableViewCellViewModel.swift */; };
+		71C1A7D929C981D80066E2E7 /* DynamicItemTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C1A7D829C981D80066E2E7 /* DynamicItemTransitionAnimator.swift */; };
+		71C1A7DE29C98F160066E2E7 /* DynamicItemContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C1A7DD29C98F160066E2E7 /* DynamicItemContentView.swift */; };
+		71C1A7E229C990AB0066E2E7 /* DynamicItemContentViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C1A7E129C990AA0066E2E7 /* DynamicItemContentViewModelContract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +109,9 @@
 		11D04EC929952307005A9B5C /* InitialSceneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialSceneTableViewCell.xib; sourceTree = "<group>"; };
 		11D04ECA29952307005A9B5C /* InitialSceneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSceneTableViewCell.swift; sourceTree = "<group>"; };
 		11D04ECD2995231B005A9B5C /* InitialSceneTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSceneTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		71C1A7D829C981D80066E2E7 /* DynamicItemTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicItemTransitionAnimator.swift; sourceTree = "<group>"; };
+		71C1A7DD29C98F160066E2E7 /* DynamicItemContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicItemContentView.swift; sourceTree = "<group>"; };
+		71C1A7E129C990AA0066E2E7 /* DynamicItemContentViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicItemContentViewModelContract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +273,7 @@
 				11D04EAA29951BB5005A9B5C /* BlurTransitionAnimator.swift */,
 				11D04EAC29951BD4005A9B5C /* CircleShapeTransitionAnimator.swift */,
 				11D04EB329951D09005A9B5C /* CardShapeTransitionAnimator.swift */,
+				71C1A7D829C981D80066E2E7 /* DynamicItemTransitionAnimator.swift */,
 			);
 			path = TransitionAnimators;
 			sourceTree = "<group>";
@@ -421,6 +428,7 @@
 		11D04EB829951E54005A9B5C /* ViewElements */ = {
 			isa = PBXGroup;
 			children = (
+				71C1A7DA29C98C600066E2E7 /* DynamicItemContentView */,
 				11D04EB929951E69005A9B5C /* BackButton.swift */,
 			);
 			path = ViewElements;
@@ -476,6 +484,31 @@
 				11D04ECA29952307005A9B5C /* InitialSceneTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		71C1A7DA29C98C600066E2E7 /* DynamicItemContentView */ = {
+			isa = PBXGroup;
+			children = (
+				71C1A7DC29C98C8C0066E2E7 /* ViewModel */,
+				71C1A7DB29C98C770066E2E7 /* View */,
+			);
+			path = DynamicItemContentView;
+			sourceTree = "<group>";
+		};
+		71C1A7DB29C98C770066E2E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71C1A7DD29C98F160066E2E7 /* DynamicItemContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71C1A7DC29C98C8C0066E2E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				71C1A7E129C990AA0066E2E7 /* DynamicItemContentViewModelContract.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -552,6 +585,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71C1A7D929C981D80066E2E7 /* DynamicItemTransitionAnimator.swift in Sources */,
 				11CD4896298BC1AF000F66CE /* AppCoreContract.swift in Sources */,
 				11D04EA629951735005A9B5C /* Publisher + Subscription.swift in Sources */,
 				11CD4894298BC187000F66CE /* AppCore.swift in Sources */,
@@ -578,7 +612,9 @@
 				11CD48D8298BC4D8000F66CE /* SecondScenePresenterContract.swift in Sources */,
 				11D04EBA29951E69005A9B5C /* BackButton.swift in Sources */,
 				11D04EAD29951BD4005A9B5C /* CircleShapeTransitionAnimator.swift in Sources */,
+				71C1A7E229C990AB0066E2E7 /* DynamicItemContentViewModelContract.swift in Sources */,
 				11D04EC029951FCD005A9B5C /* TableViewProviderType.swift in Sources */,
+				71C1A7DE29C98F160066E2E7 /* DynamicItemContentView.swift in Sources */,
 				11CD48D1298BC4D8000F66CE /* SecondSceneInteractorContract.swift in Sources */,
 				11CD48B1298BC3C2000F66CE /* InitialSceneViewControllerContract.swift in Sources */,
 				11D04ECE2995231B005A9B5C /* InitialSceneTableViewCellViewModel.swift in Sources */,

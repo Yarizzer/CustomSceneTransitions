@@ -11,7 +11,7 @@ class InitialSceneTableViewCell: UITableViewCell {
     func setup(with model: InitialSceneTableViewCellViewModelType) {
         self.model = model
         
-        cellTitle.text = model.title
+        dynamicContent.setup(with: model.dynamicItemModel)
         
         setupView()
     }
@@ -22,9 +22,7 @@ class InitialSceneTableViewCell: UITableViewCell {
     
     private var model: InitialSceneTableViewCellViewModelType?
     
-    
-    @IBOutlet private weak var cellTitle: UILabel!
-    
+    @IBOutlet private weak var dynamicContent: DynamicItemContentView!
 }
 
 extension InitialSceneTableViewCell: NibLoadableView {}

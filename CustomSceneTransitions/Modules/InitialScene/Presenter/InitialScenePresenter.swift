@@ -21,10 +21,9 @@ extension InitialScenePresenter: InitialScenePresentable {
 		let model = service.model
 		
 		switch responseType {
-		case .initialSetup:
-            viewController?.update(viewModelDataType: .initialSetup(with: model))
-            viewController?.update(viewModelDataType: .setupProvider(with: model))
-		case .releaseView: viewController = nil
+		case .initialSetup:     viewController?.update(viewModelDataType: .initialSetup(with: model))
+        case .setupProvider:    viewController?.update(viewModelDataType: .setupProvider(with: model))
+		case .releaseView:      viewController = nil
 		}
 	}
 }

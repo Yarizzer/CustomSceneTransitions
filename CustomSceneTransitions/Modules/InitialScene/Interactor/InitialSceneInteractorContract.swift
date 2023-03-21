@@ -13,6 +13,7 @@ protocol InitialSceneInteractable {
 struct InitialSceneInteractorRequest {
 	enum RequestType {
 		case initialSetup
+        case viewIsReady
         case routeToSecondScene(withIndex: Int)
 	}
 }
