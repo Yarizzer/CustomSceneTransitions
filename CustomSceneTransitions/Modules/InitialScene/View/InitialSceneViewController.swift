@@ -40,6 +40,9 @@ extension InitialSceneViewController: InitialSceneViewControllerType {
 		switch viewModelDataType {
 		case .initialSetup(let model):
             sceneTitle.text = model.sceneTitle
+
+            print(nums)
+            
         case .setupProvider(let model):
             guard let model = model as? InitialSceneViewModel else { return }
             

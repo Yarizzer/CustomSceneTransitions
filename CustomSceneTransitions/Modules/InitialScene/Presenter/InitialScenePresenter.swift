@@ -19,8 +19,8 @@ class InitialScenePresenter {
 extension InitialScenePresenter: InitialScenePresentable {
 	func response(responseType: InitialScenePresenterResponse.InitialSceneResponseType) {
 		let model = service.model
-		
-		switch responseType {
+        
+        switch responseType {
 		case .initialSetup:     viewController?.update(viewModelDataType: .initialSetup(with: model))
         case .setupProvider:    viewController?.update(viewModelDataType: .setupProvider(with: model))
 		case .releaseView:      viewController = nil
