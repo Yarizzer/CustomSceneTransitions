@@ -21,15 +21,14 @@ class InitialSceneTableViewCellViewModel {
 }
 
 extension InitialSceneTableViewCellViewModel: InitialSceneTableViewCellViewModelType {
-    var title: String { return type.title }
-    var description: String { return type.description }
+    var title: String { type.title }
+    var description: String { type.description }
     
     var dynamicItemModel: DynamicItemContentViewData {
-        return DynamicItemContentViewData(with: (title: type.title, description: type.description),
-                                          for: .regular)
+        DynamicItemContentViewData(with: (title: type.title, description: type.description), for: .regular)
     }
 }
 
 extension InitialSceneTableViewCellViewModel {
-    private struct Constants {}
+    private struct Constants { }
 }
