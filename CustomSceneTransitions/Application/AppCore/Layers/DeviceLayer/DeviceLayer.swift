@@ -18,7 +18,7 @@ protocol DeviceLayerType {
 }
 
 class DeviceLayer: DeviceLayerType {
-    var screenSize: CGRect { return UIScreen.main.bounds }
+    var screenSize: CGRect { UIScreen.main.bounds }
         
     var hasTopNotch: Bool {
         if #available(iOS 11.0, tvOS 11.0, *) {
@@ -30,17 +30,9 @@ class DeviceLayer: DeviceLayerType {
         return false
     }
     
-    func generateSuccessFeedback() {
-        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-    }
-    
-    func generateFailureFeedback() {
-        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
-    }
-    
-    func vibrate() {
-        UIDevice.vibrate()
-    }
+    func generateSuccessFeedback() { UIImpactFeedbackGenerator(style: .medium).impactOccurred() }
+    func generateFailureFeedback() { UIImpactFeedbackGenerator(style: .heavy).impactOccurred() }
+    func vibrate() { UIDevice.vibrate() }
 }
 
 extension UIDevice {

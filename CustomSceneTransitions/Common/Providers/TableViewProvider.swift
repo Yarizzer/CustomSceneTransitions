@@ -22,9 +22,7 @@ class TableViewProvider: NSObject, TableViewProviderType {
     var onSelectCell: ((IndexPath) -> Void)?
     var onSlidedCell: ((IndexPath) -> UISwipeActionsConfiguration?)?
     
-    func registerCells(_ cells: [UITableViewCell.Type]) {
-        cells.forEach { registerCell($0) }
-    }
+    func registerCells(_ cells: [UITableViewCell.Type]) { cells.forEach { registerCell($0) } }
     
     func dequeueReusableCell<T>(for indexPath: IndexPath) -> T where T : UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: T.self), for: indexPath) as? T else {
@@ -47,9 +45,7 @@ class TableViewProvider: NSObject, TableViewProviderType {
         tableView.scrollToRow(at: index, at: .bottom, animated: true)
     }
     
-    func reloadData() {
-        tableView.reloadData()
-    }
+    func reloadData() { tableView.reloadData() }
     
     private let tableView: UITableView
     private let viewModel: TableViewProviderViewModel
@@ -57,11 +53,11 @@ class TableViewProvider: NSObject, TableViewProviderType {
 
 extension TableViewProvider: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.numberOfTableSections
+        viewModel.numberOfTableSections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfTableRowsInSection(section)
+        viewModel.numberOfTableRowsInSection(section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,11 +67,11 @@ extension TableViewProvider: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        return onSlidedCell?(indexPath)
+        onSlidedCell?(indexPath)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(viewModel.heightForRow(atIndex: indexPath.row))
+        CGFloat(viewModel.heightForRow(atIndex: indexPath.row))
     }
 }
 

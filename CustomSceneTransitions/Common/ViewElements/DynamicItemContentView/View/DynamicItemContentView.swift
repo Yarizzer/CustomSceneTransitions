@@ -32,8 +32,7 @@ final class DynamicItemContentView: UIView {
         guard let type = type else { return }
         
         switch type {
-        case .regular:
-            title.heightAnchor.constraint(equalTo: canvas.heightAnchor, multiplier: Constants.titleMultiplier).isActive = true
+        case .regular: title.heightAnchor.constraint(equalTo: canvas.heightAnchor, multiplier: Constants.titleMultiplier).isActive = true
         }
     }
     
