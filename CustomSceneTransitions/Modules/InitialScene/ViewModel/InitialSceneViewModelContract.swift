@@ -19,7 +19,7 @@ struct SceneTransitionData {
         self.type = data.type
     }
     
-    var title: String
-    var description: String
-    var type: SceneTransitionType
+    let title: String
+    let description: String
+    let type: SceneTransitionType
 }

@@ -81,7 +81,7 @@ extension DynamicItemTransitionAnimator: UIViewControllerAnimatedTransitioning {
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return Constants.animationDuration
+        Constants.animationDuration
     }
 }
 

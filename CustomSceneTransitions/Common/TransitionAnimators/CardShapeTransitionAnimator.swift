@@ -129,7 +129,7 @@ class CardShapeTransitionAnimator: NSObject {
     }
     
     //MARK: - Prop's
-    private var presentingMode: Bool
+    private let presentingMode: Bool
     private var backgroundView: UIView?
 }
 
