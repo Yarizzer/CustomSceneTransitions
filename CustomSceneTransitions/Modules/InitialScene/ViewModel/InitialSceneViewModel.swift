@@ -28,31 +28,16 @@ class InitialSceneViewModel {
 extension InitialSceneViewModel: InitialSceneViewModelType {
     var sceneTitle: String { return Constants.sceneTitle }
     
-    func getCellViewModel(for index: Int) -> InitialSceneTableViewCellViewModelType {
-        return InitialSceneTableViewCellViewModel(with: types[index])
-    }
-    
-    func getType(with index: Int) -> SceneTransitionType {
-        return types[index].type
-    }
-    
-    func getData(for index: Int) -> SceneTransitionData {
-        return types[index]
-    }
+    func getCellViewModel(for index: Int) -> InitialSceneTableViewCellViewModelType { InitialSceneTableViewCellViewModel(with: types[index]) }
+    func getType(with index: Int) -> SceneTransitionType { types[index].type }
+    func getData(for index: Int) -> SceneTransitionData { types[index] }
 }
 
 extension InitialSceneViewModel: TableViewProviderViewModel {
-    var numberOfTableSections: Int {
-        return Constants.sectionsCount
-    }
+    var numberOfTableSections: Int { Constants.sectionsCount }
     
-    func numberOfTableRowsInSection(_ section: Int) -> Int {
-        return types.count
-    }
-    
-    func heightForRow(atIndex index: Int) -> Float {
-        return Constants.defaultCellHeight
-    }
+    func numberOfTableRowsInSection(_ section: Int) -> Int { types.count }
+    func heightForRow(atIndex index: Int) -> Float { Constants.defaultCellHeight }
 }
 
 extension InitialSceneViewModel {
