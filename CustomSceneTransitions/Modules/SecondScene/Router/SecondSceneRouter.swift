@@ -26,9 +26,9 @@ extension SecondSceneRouter: SecondSceneRoutable {
 		let presenter           = SecondScenePresenter(for: vc, service: presenterService)
 		let interactor          = SecondSceneInteractor(withRouter: router, presenter: presenter)
 		
+        vc.interactor = interactor
+        
 		router.view = vc
-		
-		router.view?.interactor = interactor
 		
 		guard let view = router.view else {
 			fatalError("cannot instantiate \(String(describing: SecondSceneViewController.self))")

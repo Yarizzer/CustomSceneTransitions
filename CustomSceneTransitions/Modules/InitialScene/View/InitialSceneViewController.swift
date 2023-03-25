@@ -97,5 +97,5 @@ extension InitialSceneViewController: UIViewControllerTransitioningDelegate {
 }
 
 extension InitialSceneViewController {
-	private struct Constants {}
+	private struct Constants { }
 }
