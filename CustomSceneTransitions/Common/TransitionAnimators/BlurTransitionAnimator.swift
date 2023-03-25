@@ -32,13 +32,11 @@ class BlurTransitionAnimator: NSObject {
             blurEffectView.alpha = Constants.maxAlphaValue
         }) { _ in
             UIView.animate(withDuration: Constants.animationDuration / 3, delay: 0, options: [.curveEaseInOut], animations: {
-                
                 currentView.alpha = Constants.minAlphaValue
                 presentedView.alpha = Constants.maxAlphaValue
 
             }) { _ in
                 UIView.animate(withDuration: Constants.animationDuration / 3, delay: 0, options: [.curveEaseInOut], animations: {
-                    
                     blurEffectView.alpha = Constants.minAlphaValue
                     
                 }) { finished in
@@ -50,8 +48,7 @@ class BlurTransitionAnimator: NSObject {
     }
     
     private func prepareBlurView() -> UIVisualEffectView {
-        let blurEffect = UIBlurEffect(style: .light)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
         blurEffectView.alpha = Constants.minAlphaValue
         
         return blurEffectView
@@ -64,7 +61,7 @@ extension BlurTransitionAnimator: UIViewControllerAnimatedTransitioning {
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return Constants.animationDuration
+        Constants.animationDuration
     }
 }
 

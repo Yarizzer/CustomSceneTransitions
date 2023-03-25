@@ -17,7 +17,6 @@ class CircleShapeTransitionAnimator: NSObject {
         let containerView = transitionContext.containerView
         guard let presentedVC = transitionContext.viewController(forKey: .to), let presentedView = transitionContext.view(forKey: .to) else {
             transitionContext.completeTransition(false)
-            
             return
         }
         
@@ -55,7 +54,6 @@ class CircleShapeTransitionAnimator: NSObject {
         let containerView = transitionContext.containerView
         guard let dismissedView = transitionContext.view(forKey: .from), let presentedView = transitionContext.view(forKey: .to) else {
             transitionContext.completeTransition(false)
-            
             return
         }
         
@@ -96,7 +94,7 @@ class CircleShapeTransitionAnimator: NSObject {
         return circleView
     }
     //MARK: - Prop's
-    private var isPresenting: Bool
+    private let isPresenting: Bool
     private let transitionPoint: CGPoint
 }
 
@@ -110,7 +108,7 @@ extension CircleShapeTransitionAnimator: UIViewControllerAnimatedTransitioning {
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return Constants.animationDuration
+        Constants.animationDuration
     }
 }
 
