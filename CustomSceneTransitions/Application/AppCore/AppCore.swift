@@ -19,9 +19,9 @@ class AppCore {
 }
 
 extension AppCore: AppDeviceable {
-    var deviceLayer: DeviceLayerType { return deviceL }
+    var deviceLayer: DeviceLayerType { deviceL }
 }
 
 extension AppCore: AppStyleable {
-    var styleLayer: StyleLayerType { return styleL }
+    var styleLayer: StyleLayerType { styleL }
 }
