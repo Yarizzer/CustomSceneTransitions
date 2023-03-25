@@ -19,5 +19,5 @@ class InitialScenePresenterService {
 }
 
 extension InitialScenePresenterService: InitialScenePresenterServiceType {
-	var model: InitialSceneViewModelType { return viewModel }
+	var model: InitialSceneViewModelType { viewModel }
 }

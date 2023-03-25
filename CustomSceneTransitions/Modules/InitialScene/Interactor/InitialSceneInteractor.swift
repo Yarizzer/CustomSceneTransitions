@@ -13,9 +13,9 @@ class InitialSceneInteractor {
         self.service = service
 	}
 
-	private var router: InitialSceneRoutable
-	private var presenter: InitialScenePresentable
-    private var service: InitialSceneInteractorServiceType
+	private let router: InitialSceneRoutable
+	private let presenter: InitialScenePresentable
+    private let service: InitialSceneInteractorServiceType
 }
 
 extension InitialSceneInteractor: InitialSceneInteractable {

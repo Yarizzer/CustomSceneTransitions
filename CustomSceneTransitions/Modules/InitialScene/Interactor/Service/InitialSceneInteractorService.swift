@@ -14,11 +14,9 @@ class InitialSceneInteractorService {
         self.model = model
     }
     
-    private var model: InitialSceneViewModelType
+    private let model: InitialSceneViewModelType
 }
 
 extension InitialSceneInteractorService: InitialSceneInteractorServiceType {
-    func getData(for index: Int) -> SceneTransitionData {
-        return model.getData(for: index)
-    }
+    func getData(for index: Int) -> SceneTransitionData { model.getData(for: index) }
 }
