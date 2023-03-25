@@ -12,8 +12,8 @@ class SecondSceneInteractor {
 		self.presenter = presenter
 	}
 
-	private var router: SecondSceneRoutable
-	private var presenter: SecondScenePresentable
+	private let router: SecondSceneRoutable
+	private let presenter: SecondScenePresentable
 }
 
 extension SecondSceneInteractor: SecondSceneInteractable {

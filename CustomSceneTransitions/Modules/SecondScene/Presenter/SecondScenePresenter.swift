@@ -13,7 +13,7 @@ class SecondScenePresenter {
 	}
 	
 	private var viewController: SecondSceneViewControllerType?
-	private var service: SecondScenePresenterServiceType
+	private let service: SecondScenePresenterServiceType
 }
 
 extension SecondScenePresenter: SecondScenePresentable {

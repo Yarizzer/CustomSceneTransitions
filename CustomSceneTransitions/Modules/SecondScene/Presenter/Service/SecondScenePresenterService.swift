@@ -15,7 +15,7 @@ class SecondScenePresenterService {
 		self.viewModel = model
 	}
 	
-	private var viewModel: SecondSceneViewModelType
+	private let viewModel: SecondSceneViewModelType
 }
 
 extension SecondScenePresenterService: SecondScenePresenterServiceType {

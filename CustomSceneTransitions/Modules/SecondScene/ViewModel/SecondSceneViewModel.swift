@@ -18,7 +18,7 @@ class SecondSceneViewModel {
         self.data = data
     }
     
-    private var data: SceneTransitionData
+    private let data: SceneTransitionData
 }
 
 extension SecondSceneViewModel: SecondSceneViewModelType {
