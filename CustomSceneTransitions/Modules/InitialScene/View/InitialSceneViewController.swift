@@ -23,6 +23,9 @@ class InitialSceneViewController: BaseViewController<InitialSceneInteractable> {
     }
 	
 	private func setup() {
+        sceneTitle.font = AppCore.shared.styleLayer.font(for: .sceneTitle, with: .largeTitle)
+        sceneTitle.textColor = AppCore.shared.styleLayer.colorLightGray
+        
 		interactor?.makeRequest(requestType: .initialSetup)
 	}
     

@@ -23,17 +23,11 @@ final class DynamicItemContentView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        guard let canvas = canvas, let title = titleLabel else { return }
+        guard let canvas = canvas else { return }
         
         canvas.layer.cornerRadius = Constants.cornerRadiusValue
         canvas.layer.borderWidth = Constants.borderWidthValue
         canvas.layer.borderColor = AppCore.shared.styleLayer.colorDarkGray.cgColor
-        
-        guard let type = type else { return }
-        
-        switch type {
-        case .regular: title.heightAnchor.constraint(equalTo: canvas.heightAnchor, multiplier: Constants.titleMultiplier).isActive = true
-        }
     }
     
     private func setupView() {
@@ -46,8 +40,8 @@ final class DynamicItemContentView: UIView {
         addSubview(canvas)
     }
     
-    private func setupConstraints(for type: DynamicItemContetntViewType) {
-        guard let canvas = canvas else { return }
+    private func setupConstraints(for type: DynamicItemContentViewType) {
+        guard let canvas else { return }
         
         canvas.translatesAutoresizingMaskIntoConstraints = false
         
@@ -58,19 +52,20 @@ final class DynamicItemContentView: UIView {
         
         switch type {
         case .regular:
-            guard let title = titleLabel, let description = descriptionLabel else { return }
+            guard let titleLabel, let descriptionLabel else { return }
             
-            title.translatesAutoresizingMaskIntoConstraints = false
-            description.translatesAutoresizingMaskIntoConstraints = false
+            titleLabel.translatesAutoresizingMaskIntoConstraints = false
+            descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
             
-            title.topAnchor.constraint(equalTo: canvas.topAnchor).isActive = true
-            title.leadingAnchor.constraint(equalTo: canvas.leadingAnchor, constant: Constants.elementsPaddingValue).isActive = true
-            title.trailingAnchor.constraint(equalTo: canvas.trailingAnchor, constant: -Constants.elementsPaddingValue).isActive = true
+            titleLabel.topAnchor.constraint(equalTo: canvas.topAnchor).isActive = true
+            titleLabel.leadingAnchor.constraint(equalTo: canvas.leadingAnchor, constant: Constants.elementsPaddingValue).isActive = true
+            titleLabel.trailingAnchor.constraint(equalTo: canvas.trailingAnchor, constant: -Constants.elementsPaddingValue).isActive = true
+            titleLabel.heightAnchor.constraint(equalTo: canvas.heightAnchor, multiplier: Constants.titleMultiplier).isActive = true
             
-            description.topAnchor.constraint(equalTo: title.bottomAnchor).isActive = true
-            description.leadingAnchor.constraint(equalTo: canvas.leadingAnchor, constant: Constants.elementsPaddingValue).isActive = true
-            description.trailingAnchor.constraint(equalTo: canvas.trailingAnchor, constant: -Constants.elementsPaddingValue).isActive = true
-            description.bottomAnchor.constraint(equalTo: canvas.bottomAnchor).isActive = true
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
+            descriptionLabel.leadingAnchor.constraint(equalTo: canvas.leadingAnchor, constant: Constants.elementsPaddingValue).isActive = true
+            descriptionLabel.trailingAnchor.constraint(equalTo: canvas.trailingAnchor, constant: -Constants.elementsPaddingValue).isActive = true
+            descriptionLabel.bottomAnchor.constraint(equalTo: canvas.bottomAnchor).isActive = true
         }
         
         self.setNeedsLayout()
@@ -86,31 +81,27 @@ final class DynamicItemContentView: UIView {
             titleLabel = UILabel()
             descriptionLabel = UILabel()
             
-            guard let title = titleLabel, let description = descriptionLabel else { return }
+            guard let titleLabel, let descriptionLabel else { return }
             
-            title.textColor = AppCore.shared.styleLayer.colorDarkGray
-            title.minimumScaleFactor = Constants.minScaleFactor
-            title.adjustsFontSizeToFitWidth = true
+            titleLabel.textColor = AppCore.shared.styleLayer.colorDarkGray
+            titleLabel.minimumScaleFactor = Constants.minScaleFactor
+            titleLabel.adjustsFontSizeToFitWidth = true
             
-            description.textColor = AppCore.shared.styleLayer.colorDarkGray
-            description.minimumScaleFactor = Constants.minScaleFactor
-            description.adjustsFontSizeToFitWidth = true
+            descriptionLabel.textColor = AppCore.shared.styleLayer.colorDarkGray
+            descriptionLabel.minimumScaleFactor = Constants.minScaleFactor
+            descriptionLabel.adjustsFontSizeToFitWidth = true
             
-            title.text = model.title
-            description.text = model.description
+            titleLabel.text = model.title
+            descriptionLabel.text = model.description
             
-            canvas.addSubview(title)
-            canvas.addSubview(description)
+            canvas.addSubview(titleLabel)
+            canvas.addSubview(descriptionLabel)
         }
         
         setupConstraints(for: model.type)
     }
     
-    func prepareForAppear(completion: @escaping (Bool) -> ()) {
-//        UIView.animate(withDuration: <#T##TimeInterval#>, delay: <#T##TimeInterval#>, animations: <#T##() -> Void#>)
-    }
-    
-    private var type: DynamicItemContetntViewType?
+    private var type: DynamicItemContentViewType?
     
     private var canvas: UIView?
     private var titleLabel: UILabel?

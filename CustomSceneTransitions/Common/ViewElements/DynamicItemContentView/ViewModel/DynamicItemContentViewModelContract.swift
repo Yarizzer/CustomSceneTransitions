@@ -5,12 +5,12 @@
 //  Created by Yaroslav Abaturov on 21.03.2023.
 //
 
-enum DynamicItemContetntViewType {
+enum DynamicItemContentViewType {
     case regular
 }
 
 struct DynamicItemContentViewData {
-    init(with demands: (title: String?, description: String?), for type: DynamicItemContetntViewType) {
+    init(with demands: (title: String?, description: String?), for type: DynamicItemContentViewType) {
         self.type = type
         
         switch type {
@@ -20,7 +20,7 @@ struct DynamicItemContentViewData {
         }
     }
     
-    var type: DynamicItemContetntViewType
+    var type: DynamicItemContentViewType
     var title: String?
     var description: String?
 }
