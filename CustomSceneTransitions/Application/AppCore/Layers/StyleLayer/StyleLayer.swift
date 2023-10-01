@@ -67,6 +67,8 @@ extension StyleLayer: StyleLayerType {
     func font(for type: StyleLayerFontType, with style: UIFont.TextStyle) -> UIFont {
         switch type {
         case .sceneTitle:           return UIFontMetrics(forTextStyle: style).scaledFont(for: Constants.sceneTitleFont)
+        case .cellTitle:            return UIFontMetrics(forTextStyle: style).scaledFont(for: Constants.cellTitleFont)
+        case .cellDescription:      return UIFontMetrics(forTextStyle: style).scaledFont(for: Constants.cellDescriptionFont)
         }
     }
     //Layers
@@ -77,6 +79,8 @@ extension StyleLayer: StyleLayerType {
 extension StyleLayer {
     private struct Constants {
         static let sceneTitleFont: UIFont = UIFont(name: "AppleSDGothicNeo-UltraLight", size: 25.0) ?? UIFont.systemFont(ofSize: 25.0)
+        static let cellTitleFont: UIFont = UIFont(name: "AppleSDGothicNeo-UltraLight", size: 17.0) ?? UIFont.systemFont(ofSize: 17.0)
+        static let cellDescriptionFont: UIFont = UIFont(name: "AppleSDGothicNeo-UltraLight", size: 12.0) ?? UIFont.systemFont(ofSize: 12.0)
         static let regularBorderWidthValue: CGFloat = 1.0
         static let regularLineWidthValue: CGFloat = 2.0
     }

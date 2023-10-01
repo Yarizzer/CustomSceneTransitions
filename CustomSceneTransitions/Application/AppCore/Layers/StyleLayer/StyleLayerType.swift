@@ -8,7 +8,7 @@
 import UIKit
 
 enum StyleLayerFontType {
-  case sceneTitle
+  case sceneTitle, cellTitle, cellDescription
 }
 
 protocol StyleLayerType: AnyObject {
@@ -29,12 +29,6 @@ protocol StyleLayerType: AnyObject {
     var colorPurple: UIColor { get }
     //Fonts
     func font(for type: StyleLayerFontType, with style: UIFont.TextStyle) -> UIFont
-    
-//    var labelTitleFontExtraLarge: UIFont { get }
-//    var labelTitleFontLarge: UIFont { get }
-//    var labelTitleFontMedium: UIFont { get }
-//    var labelTitleFontSmall: UIFont { get }
-//    var labelTitleFontExtraSmall: UIFont { get }
     //Buttons
     var layerRegularBorderWidth: CGFloat { get }
     var layerRegularLineWidth: CGFloat { get }
