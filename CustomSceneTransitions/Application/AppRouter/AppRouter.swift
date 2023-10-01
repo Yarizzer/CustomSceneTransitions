@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol AppRoutable {
+protocol AppRoutable: AnyObject {
     func routeToInitialScene()
 }
 
