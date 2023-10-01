@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,7 +38,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxU-2E-fKU">
-                            <rect key="frame" x="55" y="10" width="255" height="30"/>
+                            <rect key="frame" x="53.5" y="16.5" width="213" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -45,13 +46,13 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="71H-jH-jy6" firstAttribute="leading" secondItem="F0S-sf-IKf" secondAttribute="leading" constant="10" id="8Nb-iX-4Bg"/>
-                        <constraint firstItem="bxU-2E-fKU" firstAttribute="leading" secondItem="71H-jH-jy6" secondAttribute="trailing" constant="5" id="F1x-VI-CKZ"/>
+                        <constraint firstItem="bxU-2E-fKU" firstAttribute="width" secondItem="F0S-sf-IKf" secondAttribute="width" multiplier="2:3" id="GhI-Yl-k0p"/>
+                        <constraint firstItem="bxU-2E-fKU" firstAttribute="height" secondItem="F0S-sf-IKf" secondAttribute="height" multiplier="1:3" id="JAT-Di-IoR"/>
                         <constraint firstAttribute="bottom" secondItem="71H-jH-jy6" secondAttribute="bottom" constant="5" id="X0O-ux-qdw"/>
-                        <constraint firstItem="bxU-2E-fKU" firstAttribute="top" secondItem="F0S-sf-IKf" secondAttribute="top" constant="10" id="gdG-U0-W11"/>
-                        <constraint firstAttribute="trailing" secondItem="bxU-2E-fKU" secondAttribute="trailing" constant="10" id="gv6-1o-0yV"/>
+                        <constraint firstItem="bxU-2E-fKU" firstAttribute="centerY" secondItem="F0S-sf-IKf" secondAttribute="centerY" id="po7-UG-778"/>
+                        <constraint firstItem="bxU-2E-fKU" firstAttribute="centerX" secondItem="F0S-sf-IKf" secondAttribute="centerX" id="psN-7t-aiK"/>
                         <constraint firstItem="71H-jH-jy6" firstAttribute="top" secondItem="F0S-sf-IKf" secondAttribute="top" constant="5" id="rA8-PE-j1z"/>
                         <constraint firstAttribute="height" constant="50" id="sAO-Hb-sEI"/>
-                        <constraint firstAttribute="bottom" secondItem="bxU-2E-fKU" secondAttribute="bottom" constant="10" id="uVb-Ai-7Ic"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZZ-yM-rhm">

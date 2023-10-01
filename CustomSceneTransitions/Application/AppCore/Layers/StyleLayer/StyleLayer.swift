@@ -63,11 +63,12 @@ extension StyleLayer: StyleLayerType {
     var colorSoftPurple: UIColor { StyleColors.softPurple.color }
     var colorPurple: UIColor { StyleColors.purple.color }
     //Fonts
-    var labelTitleFontExtraLarge: UIFont { UIFont(name: Constants.mainAppFontName, size: Constants.extraLargeFontValue)! }
-    var labelTitleFontLarge: UIFont { UIFont(name: Constants.mainAppFontName, size: Constants.largeFontValue)! }
-    var labelTitleFontMedium: UIFont { UIFont(name: Constants.mainAppFontName, size: Constants.mediumFontValue)! }
-    var labelTitleFontSmall: UIFont { UIFont(name: Constants.mainAppFontName, size: Constants.smallFontValue)! }
-    var labelTitleFontExtraSmall: UIFont { UIFont(name: Constants.mainAppFontName, size: Constants.extraSmallFontValue)! }
+    //Fonts
+    func font(for type: StyleLayerFontType, with style: UIFont.TextStyle) -> UIFont {
+        switch type {
+        case .sceneTitle:           return UIFontMetrics(forTextStyle: style).scaledFont(for: Constants.sceneTitleFont)
+        }
+    }
     //Layers
     var layerRegularBorderWidth: CGFloat { Constants.regularBorderWidthValue}
     var layerRegularLineWidth: CGFloat { Constants.regularLineWidthValue }
@@ -75,12 +76,7 @@ extension StyleLayer: StyleLayerType {
 
 extension StyleLayer {
     private struct Constants {
-        static let mainAppFontName = "AppleSDGothicNeo-UltraLight"
-        static let extraLargeFontValue: CGFloat = 22
-        static let largeFontValue: CGFloat = 20
-        static let mediumFontValue: CGFloat = 17
-        static let smallFontValue: CGFloat = 14
-        static let extraSmallFontValue: CGFloat = 12
+        static let sceneTitleFont: UIFont = UIFont(name: "AppleSDGothicNeo-UltraLight", size: 25.0) ?? UIFont.systemFont(ofSize: 25.0)
         static let regularBorderWidthValue: CGFloat = 1.0
         static let regularLineWidthValue: CGFloat = 2.0
     }

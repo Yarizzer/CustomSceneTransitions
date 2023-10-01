@@ -7,7 +7,11 @@
 
 import UIKit
 
-protocol StyleLayerType {
+enum StyleLayerFontType {
+  case sceneTitle
+}
+
+protocol StyleLayerType: AnyObject {
     //Colors
     var colorClear: UIColor { get }
     var colorWhite: UIColor { get }
@@ -24,13 +28,14 @@ protocol StyleLayerType {
     var colorSoftPurple: UIColor { get }
     var colorPurple: UIColor { get }
     //Fonts
-    var labelTitleFontExtraLarge: UIFont { get }
-    var labelTitleFontLarge: UIFont { get }
-    var labelTitleFontMedium: UIFont { get }
-    var labelTitleFontSmall: UIFont { get }
-    var labelTitleFontExtraSmall: UIFont { get }
+    func font(for type: StyleLayerFontType, with style: UIFont.TextStyle) -> UIFont
+    
+//    var labelTitleFontExtraLarge: UIFont { get }
+//    var labelTitleFontLarge: UIFont { get }
+//    var labelTitleFontMedium: UIFont { get }
+//    var labelTitleFontSmall: UIFont { get }
+//    var labelTitleFontExtraSmall: UIFont { get }
     //Buttons
     var layerRegularBorderWidth: CGFloat { get }
     var layerRegularLineWidth: CGFloat { get }
 }
-
