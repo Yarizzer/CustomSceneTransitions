@@ -19,10 +19,26 @@ class InitialSceneViewController: BaseViewController<InitialSceneInteractable> {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        interactor?.makeRequest(requestType: .viewIsReady)
+        view.layoutIfNeeded()
+        
+        UIView.animate(withDuration: Constants.initialAD, delay: 0, options: [.curveEaseOut, .allowUserInteraction], animations: extractSelf { sSelf in
+            sSelf.topPaddingConstraint.constant -= Constants.topConstraintExtraValue
+            
+            sSelf.view.layoutIfNeeded()
+        }, completion: extractSelf { sSelf, _ in
+            interactor?.makeRequest(requestType: .viewIsReady))
+        })
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        topPaddingConstraint.constant = AppCore.shared.deviceLayer. uiLayer.device.topPaddingValue + Constants.topConstraintExtraValue
     }
 	
 	private func setup() {
+        topPaddingConstraint.constant = AppCore.shared.uiLayer.device.topPaddingValue + Constants.topConstraintExtraValue
+        
         sceneTitle.font = AppCore.shared.styleLayer.font(for: .sceneTitle, with: .largeTitle)
         sceneTitle.textColor = AppCore.shared.styleLayer.colorLightGray
         
@@ -33,6 +49,8 @@ class InitialSceneViewController: BaseViewController<InitialSceneInteractable> {
     private var selectedIndexPath: IndexPath?
     private var selectedType: SceneTransitionType?
     private var provider: TableViewProviderType?
+    
+    @IBOutlet private weak var topPaddingConstraint: NSLayoutConstraint!
     
     @IBOutlet private weak var sceneTitle: UILabel!
     @IBOutlet private weak var tableView: UITableView!
@@ -100,5 +118,10 @@ extension InitialSceneViewController: UIViewControllerTransitioningDelegate {
 }
 
 extension InitialSceneViewController {
-	private struct Constants { }
+	private struct Constants { 
+        //AlphaValues
+        static let alphaValues: (min: CGFloat, max: CGFloat) = (min: 0.0, max: 1.0)
+        //Constraints
+        static let topConstraintExtraValue: CGFloat = 30.0
+    }
 }

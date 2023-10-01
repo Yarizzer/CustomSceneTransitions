@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,6 +12,7 @@
             <connections>
                 <outlet property="sceneTitle" destination="bxU-2E-fKU" id="mLF-44-vHf"/>
                 <outlet property="tableView" destination="EV5-e5-Qrt" id="7aI-Ua-XoE"/>
+                <outlet property="topPaddingConstraint" destination="f3I-Sm-KiC" id="KEI-QS-Eil"/>
                 <outlet property="view" destination="iN0-l3-epB" id="T2C-zL-GX5"/>
             </connections>
         </placeholder>
@@ -20,10 +22,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0S-sf-IKf" userLabel="Header View">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxU-2E-fKU">
-                            <rect key="frame" x="10" y="10" width="300" height="40"/>
+                            <rect key="frame" x="10" y="10" width="300" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -33,13 +35,13 @@
                     <constraints>
                         <constraint firstItem="bxU-2E-fKU" firstAttribute="top" secondItem="F0S-sf-IKf" secondAttribute="top" constant="10" id="gdG-U0-W11"/>
                         <constraint firstAttribute="trailing" secondItem="bxU-2E-fKU" secondAttribute="trailing" constant="10" id="gv6-1o-0yV"/>
-                        <constraint firstAttribute="height" constant="60" id="sAO-Hb-sEI"/>
+                        <constraint firstAttribute="height" constant="50" id="sAO-Hb-sEI"/>
                         <constraint firstAttribute="bottom" secondItem="bxU-2E-fKU" secondAttribute="bottom" constant="10" id="uVb-Ai-7Ic"/>
                         <constraint firstItem="bxU-2E-fKU" firstAttribute="leading" secondItem="F0S-sf-IKf" secondAttribute="leading" constant="10" id="xFi-uc-23k"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EV5-e5-Qrt">
-                    <rect key="frame" x="10" y="60" width="300" height="508"/>
+                    <rect key="frame" x="10" y="50" width="300" height="518"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
